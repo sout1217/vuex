@@ -21,7 +21,7 @@
 
 <script>
     import ChatItem from "@/views/chat/ChatItem";
-    import {mapGetters} from 'vuex';
+    import {mapState} from 'vuex';
 
     export default {
         name: "messageList",
@@ -34,7 +34,7 @@
             newMessageCount() {
                 return this.chatList.map(chat => chat.new).reduce((total, val) => total + val)
             },
-            ...mapGetters({
+            ...mapState({
                 chatList: 'chatList'
             })
         },
