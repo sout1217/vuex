@@ -21,25 +21,31 @@
 
 <script>
     import ChatItem from "@/views/chat/ChatItem";
+    import { mapState } from 'vuex';
 
     export default {
         name: "messageList",
         components: {ChatItem},
         data() {
           return {
-              chatList: [
-                  { id: 1, lastMessage: '채팅 메시지1', new: 1 },
-                  { id: 2, lastMessage: '채팅 메시지2', new: 2 },
-                  { id: 3, lastMessage: '채팅 메시지3', new: 1 },
-                  { id: 4, lastMessage: '채팅 메시지4', new: 1 },
-                  { id: 5, lastMessage: '채팅 메시지5', new: 5 },
-              ]
           }
         },
         computed: {
             newMessageCount() {
                 return this.chatList.map(chat => chat.new).reduce((total, val) => total + val)
-            }
+            },
+            ...mapState({
+                /** 1번째 방법 Arrow function 형식 */
+                chatList: state => state.chatList // .filter(chat => chat.new >= 2)
+
+                /** 2번째 방법 String 형식 */
+                // chatList: 'chatList'
+
+                /** 3번째 방법 method 형식 */
+                // chatList(state) {
+                //     return state.chatList.filter(chat => chat.new >= 2);
+                // }
+            })
         },
         methods: {
             readChatItem(chatItem) {
