@@ -30,6 +30,11 @@ export default createStore({
   // 컴포넌트는 action 을 실행하고, action 이 mutations 을 실행해야 한다.
   // 현재는 백엔드 api 비동기처리를 하지 않기 때문에 자식 컴포넌트인 ChatItem.vue 에서 바로 mutations 을 실행하였다.
   actions: {
+    // context 는 store 를 가져오거나 getter 를 가져오며 commit 메소드가 존재한다
+    // chat 은 컴포넌트로 부터 넘어온 인자 값 이다.
+    readChat(context, chat) {
+      context.commit('readChat', chat)
+    }
   },
   modules: {
   }
