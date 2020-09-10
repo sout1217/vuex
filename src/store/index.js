@@ -16,8 +16,19 @@ export default createStore({
   getters: {
       chatList: state => state.chatList
   },
+  // state 의 값을 변경하기 메소드를 적는 곳
   mutations: {
+    readChat(state, chat) {
+      state.chatList.forEach(item => {
+        if (item.id === chat.id) {
+          item.new = 0
+        }
+      })
+
+    }
   },
+  // 컴포넌트는 action 을 실행하고, action 이 mutations 을 실행해야 한다.
+  // 현재는 백엔드 api 비동기처리를 하지 않기 때문에 자식 컴포넌트인 ChatItem.vue 에서 바로 mutations 을 실행하였다.
   actions: {
   },
   modules: {

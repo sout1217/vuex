@@ -11,7 +11,7 @@
         <div class="container">
             <div class="list-group">
                 <template v-for="(chat, index) in chatList" :key="index">
-                    <chat-item :chat="chat" @read="readChatItem(chat)"/>
+                    <chat-item :chat="chat" />
                 </template>
             </div>
         </div>
@@ -39,9 +39,7 @@
             })
         },
         methods: {
-            readChatItem(chatItem) {
-                this.chatList.filter(chat => chat.id === chatItem.id)[0].new = 0
-            }
+
         },
     }
 </script>
