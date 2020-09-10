@@ -10,6 +10,9 @@ export default createStore({
       { id: 5, lastMessage: '채팅 메시지5', new: 5 },
     ]
   },
+  getters: {
+      chatList: state => state.chatList
+  },
   mutations: {
   },
   actions: {

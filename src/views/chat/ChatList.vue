@@ -21,7 +21,7 @@
 
 <script>
     import ChatItem from "@/views/chat/ChatItem";
-    import { mapState } from 'vuex';
+    import {mapGetters} from 'vuex';
 
     export default {
         name: "messageList",
@@ -34,17 +34,8 @@
             newMessageCount() {
                 return this.chatList.map(chat => chat.new).reduce((total, val) => total + val)
             },
-            ...mapState({
-                /** 1번째 방법 Arrow function 형식 */
-                chatList: state => state.chatList // .filter(chat => chat.new >= 2)
-
-                /** 2번째 방법 String 형식 */
-                // chatList: 'chatList'
-
-                /** 3번째 방법 method 형식 */
-                // chatList(state) {
-                //     return state.chatList.filter(chat => chat.new >= 2);
-                // }
+            ...mapGetters({
+                chatList: 'chatList'
             })
         },
         methods: {
