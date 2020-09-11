@@ -66,6 +66,31 @@ const routes = [
         component: () => import('@/views/admin/AdminEdit'),
       }
     ]
+  },
+    // vue cli 2 component 방식
+  // {
+  //   path: '*',
+  //   component: () => import('@/views/sign/SignOut')
+  // },
+    // vue cli 2 redirect 방식
+  // {
+    // path: '*',
+    // [선택 1]
+    // redirect: '/sign-out'
+    // [선택 2]
+    // redirect: {name: 'signOutPage'}
+  // },
+    // vue cli 3 방식
+  // {
+  //   path: '/:catchAll(.*)',
+  //   component: () => import('@/views/sign/SignOut')
+  // },
+  {
+    path: '/:catchAll(.*)',
+    // [선택 1]
+    redirect: '/sign-out'
+    // [선택 2]
+    // redirect: {name: 'signOutPage'}
   }
 ]
 
