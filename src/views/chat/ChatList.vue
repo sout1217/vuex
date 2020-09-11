@@ -54,7 +54,7 @@
             //     }
             // })
             /** 두 번째 방법 이용 */
-            ...mapState({
+            ...mapState(
                 chatList(state) {
                     switch (this.moduleType) {
                         case 1: return state.module1.chatList
