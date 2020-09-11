@@ -21,7 +21,15 @@ const routes = [
     path: '/sign-out',
     name: 'signOutPage',
     component: () => import('@/views/sign/SignOut')
-  }
+  },
+  {
+    // :usedId 는 외부(링크공유)에서 파라미터를 전달해주기 위해 설정해놓는 것 이다.
+    // 내부에서는 :usedId 가 없어도 <router-link to="{ path: '/users', params: {userId: 1} }">테스트<router-link> 로 전달 가능하다
+    path: '/users/:userId',
+    name: 'users',
+    component: () => import('@/views/sign/Users')
+  },
+
 ]
 
 const router = createRouter({

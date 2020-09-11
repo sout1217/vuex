@@ -16,6 +16,11 @@
 
     <sign-home-second v-show="secondHome" />
 
+    <div class="user-page mt-3">
+      <router-link to="/">[홈 페이지]</router-link> |
+      <router-link to="/users/1">[유저 페이지]</router-link>
+    </div>
+
   </div>
   <router-view/>
 </template>
@@ -38,6 +43,7 @@
   color: #2c3e50;
 }
 
+/* router-link active 색 지정 */
 #nav a.router-link-exact-active {
   color: #42b983;
 }

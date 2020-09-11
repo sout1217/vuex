@@ -11,6 +11,7 @@
                 <router-link to="/sign-out">로그아웃</router-link>
             </li>
         </ul>
+        <hr>
     </div>
 </template>
 <script>

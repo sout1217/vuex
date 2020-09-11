@@ -8,6 +8,7 @@
             <button @click="$router.push({path: '/sign-up'})" type="button" class="btn btn-info ">회원가입</button>
             <button @click="$router.push('/sign-out')" type="button" class="btn btn-warning text-white">로그아웃</button>
         </div>
+        <hr>
     </div>
 </template>
 <script>
