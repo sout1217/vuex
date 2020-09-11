@@ -18,7 +18,8 @@
 
     <div class="user-page mt-3">
       <router-link to="/">[홈 페이지]</router-link> |
-      <router-link to="/users/1">[유저 페이지]</router-link>
+      <router-link to="/users/1">[유저 페이지]</router-link> |
+      <router-link to="/admin">[어드민 페이지]</router-link>
     </div>
 
   </div>

@@ -29,7 +29,23 @@ const routes = [
     name: 'users',
     component: () => import('@/views/sign/Users')
   },
-
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('@/views/admin/Admin'),
+    children: [
+      {
+        path: ':id',
+        name: 'adminDetail',
+        component: () => import('@/views/admin/AdminDetail'),
+      },
+      {
+        path: ':id/edit',
+        name: 'adminEdit',
+        component: () => import('@/views/admin/AdminEdit'),
+      }
+    ]
+  }
 ]
 
 const router = createRouter({
